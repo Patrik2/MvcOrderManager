@@ -1,4 +1,4 @@
-﻿@model IEnumerable<OrdersApp.Product>
+﻿@model List<MvcTry1.Models.CartItemViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -15,37 +15,34 @@
   <table class="table">
     <tr>
         <th>
-            ItemID
+            @Html.LabelFor(model=> model[0].ItemId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ItemPrice)
+            @Html.LabelFor(model => model[0].ItemPrice)
         </th>
         <th>
-            Quantity
+            @Html.LabelFor(model => model[0].Quantity)
         </th>
     </tr>
 
-  @foreach (var item in Model)
+      
+  @for ( int i =0; i < Model.Count; i++)
   {
     <tr>
         <td>
-            @Html.DisplayFor(model=> item.ItemId )
+            @Html.DisplayFor(model=> model[i].ItemId)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ItemPrice)  
+            @Html.DisplayFor(model => model[i].ItemPrice)  
         </td>
         <td>
-            @Html.Hidden("ids",item.ItemId)
-           @*<input type="number" name="quantity" min="0" value="0" size="1">*@ 
-            @Html.TextBox("quantities","0", new {type = "number", min = "0", max="9999" })
+            @Html.TextBoxFor(model => model[i].Quantity, new { type = "number", min = "0", max = "9999" })
+            @Html.HiddenFor(model => model[i].ItemId)
         </td>
     </tr>
     }
-
    </table>
-
 <p>
     <input type="submit" value="To Cart" class="btn btn-default" />
-    @*<a asp-action="OrderResult">To Cart</a>*@
 </p>
 }

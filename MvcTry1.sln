@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcTry1", "MvcTry1\MvcTry1.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersApp", "OrdersApp\OrdersApp.csproj", "{A5B99072-D102-44CD-8839-CFBAAF8ABFE1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersAppTests", "OrdersAppTests\OrdersAppTests.csproj", "{E63A892D-5B43-4AC4-BDFE-4ECD3C192EC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A5B99072-D102-44CD-8839-CFBAAF8ABFE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5B99072-D102-44CD-8839-CFBAAF8ABFE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5B99072-D102-44CD-8839-CFBAAF8ABFE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E63A892D-5B43-4AC4-BDFE-4ECD3C192EC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E63A892D-5B43-4AC4-BDFE-4ECD3C192EC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E63A892D-5B43-4AC4-BDFE-4ECD3C192EC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E63A892D-5B43-4AC4-BDFE-4ECD3C192EC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

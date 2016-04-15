@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using OrdersApp;
+using MvcTry1.Models;
 
 namespace MvcTry1.Controllers
 {
@@ -17,7 +18,7 @@ namespace MvcTry1.Controllers
         // GET: Products
         public ActionResult Index()
         {
-            return View(orderContext.Products.ToList());
+            return View(orderContext.Products.Select(product => new CartItemViewModel {ItemId=product.ItemId,ItemPrice=product.ItemPrice }).ToList());
         }
 
         List<CartItem> StoredCartItems
@@ -38,21 +39,10 @@ namespace MvcTry1.Controllers
         }
 
         [HttpPost]
-        public ActionResult Cart(List<int> quantities, List<int> ids)
+        public ActionResult Cart(List<CartItem> cartItems)
         {
-            var cartItems = new List<CartItem>();
-            for(int i = 0; i < quantities.Count; i++)
-            {
-                if(quantities[i] == 0)
-                {
-                    continue;
-                }
-                var cartItem = new CartItem();
-                cartItem.ItemId = ids[i];
-                cartItem.Quantity = quantities[i];
-                cartItems.Add(cartItem);
-            }
-            StoredCartItems = cartItems;
+            var items = cartItems.Where(cartItem => cartItem.Quantity != 0);
+            StoredCartItems = items.ToList();
             return View(StoredCartItems);
         }
         [HttpPost]
