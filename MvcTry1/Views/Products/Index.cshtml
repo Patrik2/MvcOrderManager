@@ -1,0 +1,51 @@
+﻿@model IEnumerable<OrdersApp.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Products</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm("Cart", "Products", FormMethod.Post))
+{
+  <table class="table">
+    <tr>
+        <th>
+            ItemID
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemPrice)
+        </th>
+        <th>
+            Quantity
+        </th>
+    </tr>
+
+  @foreach (var item in Model)
+  {
+    <tr>
+        <td>
+            @Html.DisplayFor(model=> item.ItemId )
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemPrice)  
+        </td>
+        <td>
+            @Html.Hidden("ids",item.ItemId)
+           @*<input type="number" name="quantity" min="0" value="0" size="1">*@ 
+            @Html.TextBox("quantities","0", new {type = "number", min = "0", max="9999" })
+        </td>
+    </tr>
+    }
+
+   </table>
+
+<p>
+    <input type="submit" value="To Cart" class="btn btn-default" />
+    @*<a asp-action="OrderResult">To Cart</a>*@
+</p>
+}

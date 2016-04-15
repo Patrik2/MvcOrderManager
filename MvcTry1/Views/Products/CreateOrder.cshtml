@@ -1,0 +1,46 @@
+﻿@model OrdersApp.Order
+
+<h2>Order</h2>
+
+@Html.ActionLink("Buy Some Other Stuff","Index")
+@*@Html.ActionLink("Back To Cart", "Cart")*@
+
+<table class="table">
+    <tr>
+        <th>
+            ItemID
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Quantity
+        </th>
+        <th>
+            Total Price
+        </th>
+    </tr>
+
+@foreach (var item in Model.OrderItems) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.ItemId)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.TotalPrice)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.OrderNumber }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OrderNumber }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OrderNumber })*@
+        </td>
+    </tr>
+}
+
+</table>
