@@ -1,0 +1,8 @@
+﻿@model OrdersApp.CartItem
+
+
+@Html.TextBoxFor(model => model.Quantity, new { type = "number", min = "0", max = "9999" })
+
+@Html.HiddenFor(model => model.ItemId)
+
+
