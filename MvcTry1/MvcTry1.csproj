@@ -293,15 +293,15 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\OrdersApp\OrdersApp\OrdersApp.csproj">
-      <Project>{a5b99072-d102-44cd-8839-cfbaaf8abfe1}</Project>
-      <Name>OrdersApp</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Migrations\201604121358301_AddAnnotations.resx">
       <DependentUpon>201604121358301_AddAnnotations.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OrdersApp\OrdersApp.csproj">
+      <Project>{a5b99072-d102-44cd-8839-cfbaaf8abfe1}</Project>
+      <Name>OrdersApp</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

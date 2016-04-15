@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcTry1", "MvcTry1\MvcTry1.csproj", "{91B825FD-CA60-4B1A-9DD6-9C19B685CDCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersApp", "..\OrdersApp\OrdersApp\OrdersApp.csproj", "{A5B99072-D102-44CD-8839-CFBAAF8ABFE1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersApp", "OrdersApp\OrdersApp.csproj", "{A5B99072-D102-44CD-8839-CFBAAF8ABFE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

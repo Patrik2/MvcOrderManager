@@ -31,6 +31,7 @@ namespace MvcTry1.Controllers
                 Session["cart"] = value;
             }
         }
+
         public ActionResult Cart()
         {
             return View(StoredCartItems);
